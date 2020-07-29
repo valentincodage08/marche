@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formReservation 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}
+    Réservation
+{% endblock %}
+
+
+{% block body %}
+
+<h1>Effectuez votre Réservation</h1>
+
+{{ form_start(formReservation)}}
+
+{{ form_row(formReservation.name, {'attr': {'placeholder': "Nom"}})}}
+{{ form_row(formReservation.firstname, {'attr': {'placeholder': "Prénom"}})}}
+{{ form_row(formReservation.nom_ent, {'attr': {'placeholder': "Nom de votre entreprise (optionnel)"}})}}
+{{ form_row(formReservation.siret, {'attr': {'placeholder': "Siret (optionnel)"}})}}
+{{ form_row(formReservation.tel, {'attr': {'placeholder': "Tel"}})}}
+{{ form_row(formReservation.email, {'attr': {'placeholder': "Email"}})}}
+
+{{ form_end(formReservation)}}
+
+{% endblock %}
