@@ -39,19 +39,14 @@ class ChaletController extends AbstractController
                 ])
                 ->add('tel', TelType::class)
                 ->add('email', EmailType::class)
-                ->add('save', SubmitType::class, [
-                    'label' => 'Valider',
-                    'attr' => [
-                        'class' => 'btn btn-primary'
-                    ]
-                ])
                 ->getForm();
                 if($chalet->getNumber() > 0 && $chalet2->getNumber() > 0) {
                     $form->add('type', ChoiceType::class, [
                         'choices'  => [
                             '2x2' => '1',
-                            '2x3' => '2'
-                        ],
+                            '2x3' => '2',],
+                            'expanded' => 'true',
+                        
                     ]);
                 }
                 if($chalet->getNumber() > 0 && $chalet2->getNumber() == 0) {
@@ -59,6 +54,7 @@ class ChaletController extends AbstractController
                         'choices'  => [
                             '2x2' => '1'
                         ],
+                        'expanded' => 'true',
                     ]);
                 }
                 if($chalet->getNumber() == 0 && $chalet2->getNumber() > 0) {
@@ -66,6 +62,7 @@ class ChaletController extends AbstractController
                         'choices'  => [
                             '2x3' => '2'
                         ],
+                        'expanded' => 'true',
                     ]);
                 }
                 if($chalet->getNumber() == 0 && $chalet2->getNumber() == 0) {
