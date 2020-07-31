@@ -15,7 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class ChaletController extends AbstractController
 {
@@ -37,9 +37,11 @@ class ChaletController extends AbstractController
                 ])
                 ->add('tel', TelType::class)
                 ->add('email', EmailType::class)
-                ->add('type', EntityType::class, [
-                    'class' => Chalet::class,
-                    'choice_label' => 'type',
+                ->add('type', ChoiceType::class, [
+                    'choices' => [
+                        '2x2' => '2x2',
+                        '2x3' => '2x3'
+                    ],
                     'expanded' => true
                 ])
                 ->add('save', SubmitType::class, [
@@ -52,9 +54,11 @@ class ChaletController extends AbstractController
 
                 $form->handleRequest($request);
 
+                dump($reservation);
+                
                 if($form->isSubmitted() && $form->isValid()) {
                     $manager->persist($reservation);
-                    $manager->flush();
+                    //$manager->flush();
                 }
         return $this->render('reservation/index.html.twig', [
             'formReservation' => $form->createView()
