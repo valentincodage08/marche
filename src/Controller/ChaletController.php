@@ -85,6 +85,7 @@ class ChaletController extends AbstractController
                         $manager->persist($chalet);
                 }
                 $manager->flush();
+                return $this->redirectToRoute('app_register');
             }
         return $this->render('reservation/index.html.twig', [
             'formReservation' => $form->createView()

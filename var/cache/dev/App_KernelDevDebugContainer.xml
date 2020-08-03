@@ -348,6 +348,14 @@
         <argument type="service" id=".service_locator.4kZ4HNI.App\Controller\Admin\DashboardController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\ReservationCrudController" class="App\Controller\Admin\ReservationCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.dashboard_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.4kZ4HNI.App\Controller\Admin\ReservationCrudController"/>
+      </call>
+    </service>
     <service id="App\Controller\ChaletController" class="App\Controller\ChaletController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -5380,6 +5388,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ReservationCrudController" class="App\Controller\Admin\ReservationCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ReservationCrudController" class="App\Controller\Admin\ReservationCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Admin\ReservationCrudController" class="App\Controller\Admin\ReservationCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\ReservationCrudController" class="App\Controller\Admin\ReservationCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ChaletController" class="App\Controller\ChaletController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ChaletController" class="App\Controller\ChaletController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ChaletController" class="App\Controller\ChaletController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5747,10 +5759,11 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.xSzwGbb" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Dy2dpd0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\DashboardController::configureUserMenu" type="service" id=".service_locator.fLx15ph"/>
+        <argument key="App\Controller\Admin\ReservationCrudController::configureUserMenu" type="service" id=".service_locator.fLx15ph"/>
         <argument key="App\Controller\ChaletController::reservation" type="service" id=".service_locator.8j93Cq2"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.ztkjRWS"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.xA8Fw_."/>
@@ -5761,6 +5774,7 @@
         <argument key="kernel::registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel::terminate" type="service" id=".service_locator.beq5mCo"/>
         <argument key="App\Controller\Admin\DashboardController:configureUserMenu" type="service" id=".service_locator.fLx15ph"/>
+        <argument key="App\Controller\Admin\ReservationCrudController:configureUserMenu" type="service" id=".service_locator.fLx15ph"/>
         <argument key="App\Controller\ChaletController:reservation" type="service" id=".service_locator.8j93Cq2"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.ztkjRWS"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.xA8Fw_."/>
@@ -6076,6 +6090,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.4kZ4HNI" method="withContext"/>
     </service>
+    <service id=".service_locator.4kZ4HNI.App\Controller\Admin\ReservationCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\ReservationCrudController"/>
+      <argument>App\Controller\Admin\ReservationCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.4kZ4HNI" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6277,12 +6297,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Provider\AdminContextProvider"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.xSzwGbb"/>
+      <argument type="service" id=".service_locator.Dy2dpd0"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.xSzwGbb"/>
+      <argument type="service" id=".service_locator.Dy2dpd0"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6559,6 +6579,7 @@
       <argument>C:\wamp-3.2.0\www\symfony\marche\var\cache\dev</argument>
       <argument type="collection">
         <argument>App\Controller\Admin\DashboardController</argument>
+        <argument>App\Controller\Admin\ReservationCrudController</argument>
       </argument>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry" class="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry" public="false">
@@ -6700,7 +6721,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.xSzwGbb"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Dy2dpd0"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

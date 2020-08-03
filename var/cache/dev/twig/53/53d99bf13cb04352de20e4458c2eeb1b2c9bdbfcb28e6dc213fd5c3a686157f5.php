@@ -122,12 +122,16 @@ class __TwigTemplate_559a39862ad30c6afd923844db67678e154821d7bf63fb8da82ab4e363b
         // line 21
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formReservation"]) || array_key_exists("formReservation", $context) ? $context["formReservation"] : (function () { throw new RuntimeError('Variable "formReservation" does not exist.', 21, $this->source); })()), "email", [], "any", false, false, false, 21), 'row', ["attr" => ["placeholder" => "Email"]]);
         echo "
+";
+        // line 22
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formReservation"]) || array_key_exists("formReservation", $context) ? $context["formReservation"] : (function () { throw new RuntimeError('Variable "formReservation" does not exist.', 22, $this->source); })()), "type", [], "any", false, false, false, 22), 'row');
+        echo "
 
 <button class=\"btn btn-primary mb-5\" type=\"submit\">Valider</button>
 
 ";
-        // line 25
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formReservation"]) || array_key_exists("formReservation", $context) ? $context["formReservation"] : (function () { throw new RuntimeError('Variable "formReservation" does not exist.', 25, $this->source); })()), 'form_end');
+        // line 26
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formReservation"]) || array_key_exists("formReservation", $context) ? $context["formReservation"] : (function () { throw new RuntimeError('Variable "formReservation" does not exist.', 26, $this->source); })()), 'form_end');
         echo "
 
 ";
@@ -151,7 +155,7 @@ class __TwigTemplate_559a39862ad30c6afd923844db67678e154821d7bf63fb8da82ab4e363b
 
     public function getDebugInfo()
     {
-        return array (  130 => 25,  123 => 21,  119 => 20,  115 => 19,  111 => 18,  107 => 17,  103 => 16,  98 => 14,  93 => 11,  83 => 10,  72 => 6,  62 => 5,  51 => 1,  49 => 3,  36 => 1,);
+        return array (  134 => 26,  127 => 22,  123 => 21,  119 => 20,  115 => 19,  111 => 18,  107 => 17,  103 => 16,  98 => 14,  93 => 11,  83 => 10,  72 => 6,  62 => 5,  51 => 1,  49 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -177,6 +181,7 @@ class __TwigTemplate_559a39862ad30c6afd923844db67678e154821d7bf63fb8da82ab4e363b
 {{ form_row(formReservation.siret, {'attr': {'placeholder': \"Siret (optionnel)\"}})}}
 {{ form_row(formReservation.tel, {'attr': {'placeholder': \"Tel\"}})}}
 {{ form_row(formReservation.email, {'attr': {'placeholder': \"Email\"}})}}
+{{ form_row(formReservation.type)}}
 
 <button class=\"btn btn-primary mb-5\" type=\"submit\">Valider</button>
 

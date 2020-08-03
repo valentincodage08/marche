@@ -1,3 +1,3 @@
 <?php return array (
-  'admin' => 'App\\Controller\\Admin\\DashboardController::index',
+  'admin' => 'App\\Controller\\Admin\\ReservationCrudController::index',
 );
