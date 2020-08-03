@@ -13,6 +13,10 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+<<<<<<< HEAD
+=======
+        '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\Admin\\ReservationCrudController::index'], null, null, null, false, false, null]],
+>>>>>>> e45df90a1a5d52a4b59e414dbdcff741409fab76
         '/reservation' => [[['_route' => 'reservation', '_controller' => 'App\\Controller\\ChaletController::reservation'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],

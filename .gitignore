@@ -5,11 +5,17 @@
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
+<<<<<<< HEAD
 
+=======
+>>>>>>> e45df90a1a5d52a4b59e414dbdcff741409fab76
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
 .phpunit
 .phpunit.result.cache
 /phpunit.xml
+<<<<<<< HEAD
 ###< symfony/phpunit-bridge ###
+=======
+>>>>>>> e45df90a1a5d52a4b59e414dbdcff741409fab76
