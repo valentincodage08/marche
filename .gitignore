@@ -13,11 +13,3 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
-templates/reservation/test.html.twig
-src/Controller/Admin/DashboardController.php
-config/routes/easy_admin.yaml
-config/packages/easy_admin.yaml
-config/bundles.php
-symfony.lock
-composer.lock
-composer.json
